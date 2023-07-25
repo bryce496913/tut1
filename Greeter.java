@@ -16,11 +16,16 @@ public class Greeter {
     return messages.getString("greeting") + ", " + name;
   }
 
-  public static void main(String[] args) {
+public static void main(String[] args) {
+    if (args.length < 3) {
+        System.out.println("Usage: java Greeter <language> <country> <name>");
+        return;
+    }
+
     String language = args[0];
     String country = args[1];
     String name = args[2];
     Greeter greeter = new Greeter(language, country, name);
     System.out.println(greeter.sayHello());
-  }
+    }
 }
